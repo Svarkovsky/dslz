@@ -55,7 +55,7 @@
  *     #include "ds-lz.h"
  * 
  * API:
- *   int  dslz_compress(const uint8_t *src, size_t len, FILE *out,
+ *   int  dslz_compress(uint8_t *src, size_t len, FILE *out,
  *                      int use_delta, int stride);
  *   int  dslz_decompress(FILE *in, uint8_t *dst, size_t len);
  *   void dslz_delta_encode(uint8_t *data, size_t size, int stride);

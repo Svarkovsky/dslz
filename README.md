@@ -1,5 +1,4 @@
-<sub>*DS-LZ is **public source** — the code is open for inspection, modification, and non-commercial use under CC BY-NC-SA 4.0.*</sub>
-
+<sub>DS-LZ is public source — the code is open for inspection, modification, and non-commercial use under CC BY-NC-SA 4.0.</sub>
 
 # DS-LZ — Delta-Stride LZ Compression
 
@@ -100,6 +99,7 @@ Total save time: ~50 ms (including SD card I/O). Encode speed on ESP32-S3: ~4 MB
 
 - **C99 compiler** (GCC, Clang, xtensa-esp32-elf)
 - Standard library: `<stdio.h>`, `<stdlib.h>`, `<string.h>`
+
 ## Acknowledgments
 
 DS-LZ builds upon decades of compression research and the work of many talented engineers.
@@ -138,8 +138,6 @@ DS-LZ builds upon decades of compression research and the work of many talented 
 ### Academic References
 - **Storer, J. & Szymanski, T.** — "Data Compression via Textual Substitution" (1982). [JACM](https://dl.acm.org/doi/10.1145/322344.322356)
 - **Welch, T.** — "A Technique for High-Performance Data Compression" (1984), LZW algorithm. [IEEE](https://ieeexplore.ieee.org/document/1659047)
-
----
 
 *DS-LZ is an independent implementation. All referenced works are used for educational and inspirational purposes only.*
 

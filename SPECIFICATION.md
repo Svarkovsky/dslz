@@ -1,7 +1,6 @@
 
 # DS-LZ Compression Format Specification
 
-**Version 2.2**  
 **Author:** Ivan Svarkovsky  
 **Date:** June 2026  
 **License:** CC BY-NC-SA 4.0  

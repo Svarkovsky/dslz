@@ -1,3 +1,6 @@
+<sub>*DS-LZ is **public source** — the code is open for inspection, modification, and non-commercial use under CC BY-NC-SA 4.0.*</sub>
+
+---
 
 # DS-LZ
 

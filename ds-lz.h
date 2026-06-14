@@ -1,7 +1,6 @@
 /**
  * ds-lz.h — Delta-Stride LZ (DS-LZ) Compression Codec
  * 
- * Version 2.2
  * 
  * A domain-optimized LZ77 variant for tile-based graphics and
  * retro emulator state compression. Achieves 822× compression

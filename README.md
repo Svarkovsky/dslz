@@ -100,13 +100,48 @@ Total save time: ~50 ms (including SD card I/O). Encode speed on ESP32-S3: ~4 MB
 
 - **C99 compiler** (GCC, Clang, xtensa-esp32-elf)
 - Standard library: `<stdio.h>`, `<stdlib.h>`, `<string.h>`
-
 ## Acknowledgments
 
-- **Abraham Lempel & Jacob Ziv** — LZ77 (1977), public domain
-- **Marat Fayzullin** — [fMSX](https://fms.komkon.org/fMSX/) emulator
-- **Einar Saukas** — ZX0, optimal LZ77 for 8-bit CPUs
-- **Emmanuel Marty** — LZSA, fast retro compression
+DS-LZ builds upon decades of compression research and the work of many talented engineers.
+
+### Foundational Work
+- **Abraham Lempel & Jacob Ziv** — LZ77 algorithm (1977), the foundation of all LZ-based compression. [Paper](https://ieeexplore.ieee.org/document/1055714)
+- **Phil Katz** — PKZIP and the DEFLATE algorithm (1989), brought compression to the masses
+- **Jean-loup Gailly & Mark Adler** — gzip and zlib, the most widely used compression libraries. [zlib.net](https://zlib.net/)
+
+### Modern Compressors
+- **Yann Collet** — LZ4 and Zstd, pushing the boundaries of speed vs ratio. [LZ4](https://github.com/lz4/lz4) · [Zstd](https://github.com/facebook/zstd)
+- **Ilya Muravyov** — LZMA and 7-Zip, achieving extreme compression ratios. [7-zip.org](https://7-zip.org/)
+- **Julian Seward** — bzip2, Burrows-Wheeler transform for high compression. [bzip.org](http://bzip.org/)
+- **Rich Geldreich** — LZHAM, LZMA-class compression with faster decompression. [GitHub](https://github.com/richgel999/lzham_codec)
+
+### Retro & 8-bit Compression
+- **Einar Saukas** — ZX0 and ZX7, optimal LZ77 for Z80 and 8-bit CPUs. [GitHub](https://github.com/einar-saukas/ZX0)
+- **Emmanuel Marty** — LZSA, efficient compression for retro systems. [GitHub](https://github.com/emmanuel-marty/lzsa)
+- **Jørgen Ibsen** — aPLib and aPUltra, demoscene compression classics. [IbSEN Software](http://ibsensoftware.com/)
+- **Magnus Lind** — Exomizer, the gold standard for Commodore 64 compression. [Bitbucket](https://bitbucket.org/magli143/exomizer/)
+
+### MSX & Tile-Based Graphics
+- **Marat Fayzullin** — fMSX, the portable MSX emulator that started it all. [fMSX](https://fms.komkon.org/fMSX/)
+- **Team Bomba** — Pletter, MSX-specific LZ compressor. [GitHub](https://github.com/bombteam/pletter)
+- **Grauw** — Bitbuster, optimal MSX compression. [Grauw.nl](https://www.grauw.nl/projects/bitbuster/)
+- **Vortex** — MegaLZ, classic MSX demoscene compressor. [MegaLZ](http://vortex.untergrund.net/megalz.htm)
+
+### Platform-Specific Formats
+- **Nintendo** — LC_LZ77, RLUncomp, and Huffman compression for GBA/DS. [GBATEK](https://problemkaputt.de/gbatek.htm)
+- **Sega** — Kosinski, Enigma, and Nemesis compression for Genesis/Mega Drive. [Sega Retro](https://segaretro.org/Compression)
+
+### Standards & Specifications
+- **W3C** — PNG specification with delta filters (Sub, Up, Paeth). [RFC 2083](https://www.w3.org/TR/PNG/)
+- **ITU-T** — JPEG-LS (T.87) and LOCO-I predictive coding. [ITU](https://www.itu.int/rec/T-REC-T.87)
+
+### Academic References
+- **Storer, J. & Szymanski, T.** — "Data Compression via Textual Substitution" (1982). [JACM](https://dl.acm.org/doi/10.1145/322344.322356)
+- **Welch, T.** — "A Technique for High-Performance Data Compression" (1984), LZW algorithm. [IEEE](https://ieeexplore.ieee.org/document/1659047)
+
+---
+
+*DS-LZ is an independent implementation. All referenced works are used for educational and inspirational purposes only.*
 
 ## License
 

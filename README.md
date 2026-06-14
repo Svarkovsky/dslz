@@ -61,12 +61,19 @@ Full bitstream format: [SPECIFICATION.md](SPECIFICATION.md)
 
 ### Real-World Results
 
-| Game | Scene | Compressed | Ratio | Time |
-|------|-------|------------|-------|------|
-| Space Manbow | Title screen | 5.23 KB | **822×** | ~50 ms |
-| Space Manbow | In-game | 39.87 KB | **108×** | ~150 ms |
-| King's Valley II | Title screen | 28.21 KB | **156×** | ~50 ms |
-| Psycho World | Title screen | 45.73 KB | **96×** | ~50 ms |
+> All states from 4.4 MB MSX emulator saves. Time: ~50 ms for all.
+
+| Game | Type | Compressed | Ratio |
+|------|------|------------|-------|
+| Penguin Adventure | ROM | 15.81 KB | **278×** |
+| King's Valley II | ROM | 27.42 KB | **160×** |
+| Space Manbow | ROM | 44.93 KB | **98×** |
+| Aleste | ROM | 53.47 KB | **82×** |
+| Psycho World | DSK | 46.62 KB | **94×** |
+| Gofer no Yabou II | DSK | 304.62 KB | **14×** |
+
+**ROM games:** 80–280× compression.  
+**Disk games:** 14–95× (disk buffers reduce ratio).
 
 ### vs Universal Algorithms (VRAM Title Screen)
 

@@ -84,17 +84,17 @@ After the header, the stream consists of a sequence of variable-length commands:
 
 | Sub | Name | Payload | Length Formula | Total Size |
 |-----|------|---------|----------------|------------|
-| 0 | Long literals extended | `len16` + data | `len16` + 137 (137–65672) | 3 + length |
-| 1 | Long far match | `len16` + `off16` | `len16` (1–65535) | 5 bytes |
-| 2 | Long rep match | `len16` | `len16` (1–65535) | 3 bytes |
-| 3 | Long near match | `len16` + `off8` | `len16` (1–65535) | 4 bytes |
+| 0 | Long literals extended | `len16` + data | `len16` + 137 (137–65672) | 4 + length |
+| 1 | Long far match | `len16` + `off16` | `len16` (1–65535) | 6 bytes |
+| 2 | Long rep match | `len16` | `len16` (1–65535) | 4 bytes |
+| 3 | Long near match | `len16` + `off8` | `len16` (1–65535) | 5 bytes |
 
 *Notes:*  
 - `len16` is a 16-bit little-endian value  
 - `off16` is a 16-bit little-endian value  
 - `off8` is an 8-bit value (1–255)  
-- Reserved sub-commands (4–255) must cause the decoder to abort  
-
+- Reserved sub-commands (4–255) must cause the decoder to abort
+  
 ### 2.3 End of Stream
 
 The stream ends when the decompressor has produced exactly `uncompressed_length` bytes as specified in the header. No explicit end marker is used.

@@ -103,7 +103,7 @@ The stream ends when the decompressor has produced exactly `uncompressed_length`
 
 ### 3.1 Algorithm
 
-Delta encoding transforms the input data to improve compression ratio. It is applied before LZ77 compression and reversed after decompression.
+Delta encoding transforms the input data to improve compression ratio. It is applied before LZ77 compression and reversed after decompression. The stride parameter must be greater than 0; a stride of 0 or less disables delta encoding entirely.
 
 **2D Delta Encoding (stride > 0):**  
 - Pass 1 (vertical): For i = size-1 down to stride: `data[i] ^= data[i - stride]`  
@@ -113,9 +113,7 @@ Delta encoding transforms the input data to improve compression ratio. It is app
 - Pass 1 (horizontal): For i = 1 to size-1: If `i % stride != 0`: `data[i] ^= data[i - 1]`  
 - Pass 2 (vertical): For i = stride to size-1: `data[i] ^= data[i - stride]`  
 
-**1D Delta (stride = 0):**  
-- Encode: For i = size-1 down to 1: `data[i] ^= data[i - 1]`  
-- Decode: For i = 1 to size-1: `data[i] ^= data[i - 1]`  
+*Note: If stride ≤ 0, the delta functions are no-ops and the data passes through uncompressed by the delta stage.*
 
 ### 3.2 Stride Values
 

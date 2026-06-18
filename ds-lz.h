@@ -298,15 +298,19 @@ static void dslz_find_match(const uint8_t *src, unsigned int pos, unsigned int l
             is_rep = (voff == last_offset) ? 1 : 0;
         }
     } else if (block_type == 2 && pos >= 256) {
-        uint32_t voff = 256;
-        uint32_t max_match = len - pos;
-        if (max_match > 65535) max_match = 65535;
-        uint32_t cur = dslz_match_len(&src[pos], &src[pos - voff], max_match);
-        if (cur >= 3 && cur > best_len) {
-            best_len = cur; best_off = voff;
-            is_rep = (voff == last_offset) ? 1 : 0;
+            uint32_t voff = 256;
+            uint32_t max_match = len - pos;
+            if (max_match > 65535) max_match = 65535;
+            uint32_t cur = dslz_match_len(&src[pos], &src[pos - voff], max_match);
+            
+            /* FIX: For offset > 255, minimum match length is 4 unless it's a rep-match */
+            unsigned int min_needed = (voff == last_offset) ? 3 : 4;
+            
+            if (cur >= min_needed && cur > best_len) {
+                best_len = cur; best_off = voff;
+                is_rep = (voff == last_offset) ? 1 : 0;
+            }
         }
-    }
 
     /* Hash-based search */
     if (pos + 3 <= len) {
